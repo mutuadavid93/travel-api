@@ -19,6 +19,8 @@ return new class extends Migration {
             $table->foreignUuid("travel_id")->constrained("travels");
             
             $table->string("name");
+
+            // NOTE: these dates are without times. thus timestamp() not used
             $table->date("starting_date");
             $table->date("ending_date");
             $table->integer("price");
