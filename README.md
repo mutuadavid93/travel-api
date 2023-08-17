@@ -32,9 +32,11 @@ Create a controller for a versioned API
 
 Create a Resource. To return formatted or a subset of results
 - $ php artisan make:resource TravelResource
+- $ php artisan make:resource TourResource
 
 Create tests
 - $ php artisan make:test TravelListTest
 
 Create Factory: Feeds test database
 - $ php artisan make:factory TravelFactory --model=Travel
+- $ php artisan make:factory TourFactory --model=Tour
