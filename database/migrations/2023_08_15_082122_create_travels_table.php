@@ -10,7 +10,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        // TIP: use `str("travel")->plural()` ins Tinker to determine what Laravel
+        // TIP: use `str("travel")->plural()` inside Tinker to determine what Laravel
         // will use as table plural name
         Schema::create('travels', function (Blueprint $table) {
             $table->uuid("id")->primary();

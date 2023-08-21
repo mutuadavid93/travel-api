@@ -40,3 +40,9 @@ Create tests
 Create Factory: Feeds test database
 - $ php artisan make:factory TravelFactory --model=Travel
 - $ php artisan make:factory TourFactory --model=Tour
+
+FormRequests can validate GET requests as well. Not only POST requests
+- $ php artisan make:request ToursListRequest
+
+Focus testing a single test feature;
+- $ php artisan test --filter ToursListTest::test_tours_list_filters_by_price_correctly

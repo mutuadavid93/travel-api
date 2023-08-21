@@ -26,4 +26,4 @@ Route::get("travels", [TravelController::class, "index"]);
 
 // Tours Endpoint
 // TIP: use a different field e.g. slug instead of the default `id` column
-Route::get("travels/{travel:slug}/tours", [TourController::class, "index"]);
+Route::get("travels/{travel:slug}/tours", [TourController::class, "index"])->middleware('forceJson');

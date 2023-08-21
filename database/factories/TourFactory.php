@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Travel;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,6 +18,7 @@ class TourFactory extends Factory
     public function definition(): array
     {
         return [
+            "travel_id" => Travel::pluck("id")->random(),
             "name" => fake()->text(20),
             "starting_date" => now(),
             "ending_date" => now()->addDays(rand(1, 10)),
