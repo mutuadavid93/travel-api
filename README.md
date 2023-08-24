@@ -46,3 +46,12 @@ FormRequests can validate GET requests as well. Not only POST requests
 
 Focus testing a single test feature;
 - $ php artisan test --filter ToursListTest::test_tours_list_filters_by_price_correctly
+
+Create a custom command in Laravel
+- $ php artisan make:command CreateUserCommand
+
+Create a seeder
+- $ php artisan make:seeder RoleSeeder
+
+Run a specific seeder
+- $ php artisan db:seed --class=RoleSeeder
