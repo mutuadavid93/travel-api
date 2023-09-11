@@ -55,3 +55,20 @@ Create a seeder
 
 Run a specific seeder
 - $ php artisan db:seed --class=RoleSeeder
+
+NOTE: 
+Admin controllers can go into their own folder
+
+- $ php artisan make:controller Api/V1/Admin/TravelController
+
+When using auth:sanctum middleware below steps occur inside LoginController;
+- Login Endpoint with email and password i.e. inside api.php
+- If successful, return api token i.e. inside login controller's method
+- Then each subsequent request will be performed with that token passed as "Bearer Token"
+
+Create the LoginController.
+NOTE: the --invokable flag, generates a single __invoke() method in the controller
+- $ php artisan make:controller Api/V1/Auth/LoginController --invokable
+
+Create a laravel middleware
+- $ php artisan make:middleware RoleMiddleWare

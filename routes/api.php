@@ -1,8 +1,13 @@
 <?php
 
-use App\Http\Controllers\Api\V1\{TravelController, TourController};
+use App\Http\Controllers\Api\V1\Auth\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\{TravelController, TourController};
+
+// Import all admin resources and only specify what to use. 
+// e.g. Admin\TravelController
+use App\Http\Controllers\Api\V1\Admin;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +32,13 @@ Route::get("travels", [TravelController::class, "index"]);
 // Tours Endpoint
 // TIP: use a different field e.g. slug instead of the default `id` column
 Route::get("travels/{travel:slug}/tours", [TourController::class, "index"])->middleware('forceJson');
+
+
+// Prefix Admin Routes 
+Route::prefix("admin")->middleware(["forceJson", "auth:sanctum", "role:admin"])->group(function () {
+    // e.g. http://localhost:8000/api/v1/admin/travels
+    Route::post("travels", [Admin\TravelController::class, "store"]);
+});
+
+// Login Endpoint
+Route::post("login", LoginController::class)->name("login");
