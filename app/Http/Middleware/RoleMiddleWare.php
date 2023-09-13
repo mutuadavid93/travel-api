@@ -27,6 +27,7 @@ class RoleMiddleWare
             abort(Response::HTTP_FORBIDDEN);
         }
 
+        // Otherwise move on
         return $next($request);
     }
 }

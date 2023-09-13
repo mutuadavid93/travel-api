@@ -38,6 +38,10 @@ Route::get("travels/{travel:slug}/tours", [TourController::class, "index"])->mid
 Route::prefix("admin")->middleware(["forceJson", "auth:sanctum", "role:admin"])->group(function () {
     // e.g. http://localhost:8000/api/v1/admin/travels
     Route::post("travels", [Admin\TravelController::class, "store"]);
+
+    // Default id used instead of slug. In this case is uuid.
+    // e.g. http://localhost:8000/api/v1/admin/travels/9a1f3923-1eec-4fb5-a3f5-d86a8fe38ca7/tours
+    Route::post("travels/{travel}/tours", [Admin\TourController::class, "store"]);
 });
 
 // Login Endpoint
