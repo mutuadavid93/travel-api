@@ -74,3 +74,16 @@ NOTE: the --invokable flag, generates a single __invoke() method in the controll
 
 Create a laravel middleware
 - $ php artisan make:middleware RoleMiddleWare
+
+
+Using Laravel Pint
+- Standardizes code e.g. remove unused imports e.t.c
+
+Inspect files for errors without changing them automatically
+- $ ./vendor/bin/pint --test 
+
+Using Larastann
+- Checks for potential errors and bugs even before testing code
+
+Inspect files
+- $ ./vendor/bin/phpstan analyse
