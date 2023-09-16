@@ -5,6 +5,13 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
+// HINT: instruct larastan to understand what $this object is
+
+/**
+ * @mixin \App\Models\Travel
+ * @property int $number_of_nights
+ */
+
 class TravelResource extends JsonResource
 {
     /**
